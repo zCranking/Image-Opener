@@ -10,8 +10,6 @@ root.config(background="#ff4e00")
 image = Label(root, image="", bg="#a3f7b5", highlightthickness=2, highlightcolor="#3590f3")
 image.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-button = Button(root, text="Open Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=openimage)
-button.place(relx=0.8, rely=0.5, anchor=CENTER)
 img_path = ""
 
 def openimage():
@@ -24,4 +22,7 @@ def openimage():
     image['image'] = str(image_file)
     image_path.close()
     
+button = Button(root, text="Open Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=openimage)
+button.place(relx=0.8, rely=0.5, anchor=CENTER)
+
 root.mainloop()
