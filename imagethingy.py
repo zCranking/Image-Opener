@@ -15,7 +15,7 @@ img_path = ""
 def openimage():
     global image_path
     image_path = filedialog.askopenfilename(title = "Scanning your computers for viruses and then opening your image",
-                                            filetypes = (("png files", "*.png"),))
+                                            filetypes = (("png", "*.png"),))
     print(image_file)
     print(image_path)
     image_file = ImageTk.PhotoImage(Image.open(image_path))
@@ -23,6 +23,6 @@ def openimage():
     image_path.close()
     
 button = Button(root, text="Open Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=openimage)
-button.place(relx=0.8, rely=0.5, anchor=CENTER)
+button.place(relx=0.5, rely=0.8, anchor=CENTER)
 
 root.mainloop()
