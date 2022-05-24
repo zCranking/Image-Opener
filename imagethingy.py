@@ -18,20 +18,17 @@ def openimage():
                                             filetypes = (("png", "*.png"),))
     print(image_path)
     image_file = ImageTk.PhotoImage(Image.open(image_path))
-    image['image'] = str(image_file)
+    image['image'] = image_file
     image_file.close()
     
 def rotateimage():
     global image_path
-    image_file = ImageTk.PhotoImage(Image.open(image_path))
-    image['image'] = str(image_file)
-    openimage = open(img_path)
-    rotatedimage = openimage.rotate(90)
-    img = ImageTk.PhotoImage(Image.open(openimage))
-    image['image'] = str(img)
-    open_image.close()
+    openimage = Image.open(image_path)
+    rotatedimage = ImageTk.PhotoImage(openimage.rotate(180))
+    image['image'] = rotatedimage
+    rotatedimage.close()
     
-rotatebutton = Button(root, text="Rotate Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=openimage)
+rotatebutton = Button(root, text="Rotate Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=rotateimage)
 rotatebutton.place(relx=0.57, rely=0.8, anchor=CENTER)   
     
 openbutton = Button(root, text="Open Image",foreground="#ff4e00", font=("Comic Sans MS", "12", "normal"), command=openimage)
